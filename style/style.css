@@ -7,7 +7,7 @@
 /*Partie HEADER */
 
 header {
-	height: 72px;
+	height: 80px;
 	background-color: #fff;
 
 }
@@ -24,6 +24,7 @@ header {
     text-decoration: none;
     font-size: 25px;
     float: right;
+
 }
 
 .button2 
@@ -84,6 +85,7 @@ header {
     font-size: 25px;
     border-radius:50%;
     box-shadow:2px 2px 8px #aaa;
+    cursor:pointer;
 
 }
 
@@ -110,4 +112,56 @@ header {
 	
 }
 
+
+/* Partie inscription.php */
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+.forminscription {
+    margin-left: 450px;
+    margin-right: 450px;
+    margin-top: 30px;
+}
+.champsblanc {
+   float: right;
+}
+
+.sexe {
+}
+
+.formvalider {
+    width:100px;
+    margin-left:180px;
+    margin-top: 12px;
+    box-shadow:1px 1px 1px #262E59;
+    cursor:pointer;
+}
+
+/* Partie connexion.php */
+
+.formconnexion
+{
+    margin-left: 450px;
+    margin-right: 450px;
+    margin-top: 100px;
+}
+
+.nonmembre
+{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.lieninscris
+{
+    text-decoration: none;
+    color: #0572B6;
+    font-weight: bold;
+
+}
 
