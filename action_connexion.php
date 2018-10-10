@@ -48,7 +48,7 @@
 			$pseudo_exist = true;
 			if ($util['mdp_utilisateur'] == $_POST['pwd'])
 			{
-				$_SESSION['pseudo'] = $util['pseudo_utilisateur'];
+				$_SESSION['login'] = $util['pseudo_utilisateur'];
 				$_SESSION['id_compte'] = $util['id_utilisateur'];
 			}
 			else
