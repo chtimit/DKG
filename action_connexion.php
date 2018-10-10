@@ -62,7 +62,7 @@
 		header ("location: connexion.php?error=pseudo2");
 	}
 
-	header ("location: accueil.html");
+	header ("location: accueil.php");
 	exit();
 ?>
 <?php $dbh = null;//deco de la base de donnee ?>
