@@ -54,12 +54,14 @@
 			else
 			{
 				header("location: connexion.php?error=pwd2");
+				exit();
 			}
 		}
 	}
 	if (!$pseudo_exist)
 	{
 		header ("location: connexion.php?error=pseudo2");
+		exit();
 	}
 
 	header ("location: accueil.php");
