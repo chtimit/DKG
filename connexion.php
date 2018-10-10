@@ -4,7 +4,7 @@
 <header>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Connexion</title>
-	<a href="accueil.html"><img src="src/log12.png"> </a>
+	<a href="accueil.php"><img src="src/log12.png"> </a>
 
 </header>
 <body>
