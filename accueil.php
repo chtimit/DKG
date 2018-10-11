@@ -7,8 +7,14 @@
 	<title>Ici à Brest</title>
 		<img src="src/log12.png">
 	
-		<a href="connexion.php" class="button2"> Connexion	</a>
-		<a href="inscription.php" class="button1"> Inscription</a>
+		<?php session_start();
+		if (!isset($_SESSION['login']) || $_SESSION['login'] == "")
+		{?>
+			<a href="connexion.php" class="button2"> Connexion	</a>
+			<a href="inscription.php" class="button1"> Inscription</a>
+		<?php } else { ?>
+			<a href="deconexion.php" class="button2"> Déconexion</a>
+		<?php } ?>
 
 </header>
 <body>
