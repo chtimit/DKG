@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<header>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<a href="accueil.php"><img src="src/log12.png"> </a>
+	<?php session_start();
+		if (!isset($_SESSION['login']) || $_SESSION['login'] == "")
+		{?>
+			<a href="connexion.php" class="button2"> Connexion	</a>
+			<a href="inscription.php" class="button1"> Inscription</a>
+			<a href="profil.php" class="button3"> Profil </a>
+		<?php } else { ?>
+			<a href="deconexion.php" class="button2"> Déconexion</a>
+			<a href="profil.php" class="button3"> Profil </a>
+	<?php } ?>
+
 	<title>Evenement</title>
 	<?php
-
-	session_start();
 
 	$host = "localhost";
 	$dbname = "workshop";
@@ -36,10 +48,9 @@
 			if ($can['id_utilisateur'] == $id_util)
 			{
 				return (false);
-				header('location: evenement.php?id='.$id.'&error=dej');
-				exit();
 			}
 		}
+		return (true);
 	}
 
 	if ($_SERVER['REQUEST_METHOD'] != 'GET' || !isset($_GET['id']) || $_GET['id'] < 1)
@@ -69,44 +80,41 @@
 	foreach ($result as $eve) {}
 
 	?>
-</head>
+</header>
 <body>
-	<div>
+	<div class="formconsulter">
 		<div>
-			<label>Nom :</label><label><?php echo($eve['nom_evenement']) ?></label>
+			<label>Nom :</label><label class="label2"><?php echo($eve['nom_evenement']) ?></label>
 		</div>
 		<div>
-			<label>Ville :</label><label><?php echo($eve['cp_evenement']) ?></label><label><?php echo($eve['ville_evenement']) ?></label>
+			<label>Ville :</label><label class="label2"><?php echo($eve['cp_evenement']) ?></label><label class="label2"><?php echo($eve['ville_evenement']) ?></label>
 		</div>
 		<div>
-			<label>categorie :</label><label><?php echo($eve['categorie']) ?></label>
+			<label>Catégorie :</label><label class="label2"><?php echo($eve['categorie']) ?></label>
 		</div>
 		<div>
-			<label>Créateur :</label><label><?php echo($eve['pseudo_utilisateur']) ?></label>
+			<label>Créateur :</label><label class="label2"><?php echo($eve['pseudo_utilisateur']) ?></label>
 		</div>
-		<div>
-			<label>Description :</label><label><?php echo($eve['description_evenement']) ?></label>
-		</div>
+	</div>
+	<div class="descriptionrelou">
+		<label>Description :</label><textarea DISABLED class="labelrelou"><?php echo($eve['description_evenement']) ?></textarea>
 	</div>
 	<div>
 		<form method='GET' action="">
 			<input type="hidden" name="id" value=<?php echo ("'".$eve['id_evenement']."'") ?>>
 			<input type="hidden" name="id_util" value=<?php if (isset($_SESSION['id_compte'])){echo ("'".$_SESSION['id_compte']."'");}else{echo ("'0'");} ?>>
-			<?php if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['error']) && $_GET['error'] == 'dej') { ?>
-				<label type='error' style='border-style: solid;border-color: red'>déja candidat</label>
-			<?php } else { ?>
-				<button type='submit'>Proposer sa candidature</button>
-			<?php }	?>
+				<button type='submit' class="btncandidature">Proposer sa candidature</button>
 		</form>
 	</div>
-	<div>
+	<div class="titreliste">Liste Participant :</div>
+	<div class="liste">
 		<?php  
 		$sql = "SELECT utilisateur.pseudo_utilisateur, candidature.etat, candidature.id_candidature, candidature.id_utilisateur FROM candidature LEFT JOIN utilisateur ON candidature.id_utilisateur=utilisateur.id_utilisateur WHERE candidature.id_evenement=".$_GET['id']." ORDER BY etat";
 		$res = $dbh->query($sql);
 		foreach ($res as $can) { ?>
-			<div>
+			<div class="aligner">
 				<label><?php echo ($can['pseudo_utilisateur']) ?></label>
-				<label><?php echo ($can['etat']) ?></label>
+				<label class="etateve"><?php echo ($can['etat']) ?></label>
 				<?php if (!isset($_SESSION['login']) || ($_SESSION['id_compte'] != $eve['id_utilisateur'] && $_SESSION['id_compte'] != $can['id_utilisateur']) ||  ($can['etat'] == 'accepte' || $can['etat'] == 'refuse')) { ?>
 
 
@@ -116,13 +124,13 @@
 						<input type="hidden" name="id_can" value=<?php echo ($can['id_candidature']); ?>>
 						<input type="hidden" name="action" value="ac">
 						<input type="hidden" name="id" value=<?php echo ($_GET['id']); ?>>
-						<button type="submit">Accepter</button>
+						<button class="btnchoix" type="submit">Accepter</button>
 					</form>
 					<form method="POST" action="action_evenement.php">
 						<input type="hidden" name="id_can" value=<?php echo ($can['id_candidature']); ?>>
 						<input type="hidden" name="action" value="re">
 						<input type="hidden" name="id" value=<?php echo ($_GET['id']); ?>>
-						<button type="submit">Refuser</button>
+						<button class="btnchoix" type="submit">Refuser</button>
 					</form>
 					
 				<?php } else { ?>
@@ -131,13 +139,55 @@
 						<input type="hidden" name="id_can" value=<?php echo ($can['id_candidature']); ?>>
 						<input type="hidden" name="action" value="an">
 						<input type="hidden" name="id" value=<?php echo ($_GET['id']); ?>>
-						<button type="submit">Annuler</button>
+						<button class="btnannuler" type="submit">Annuler</button>
 					</form>
 
 				<?php } ?>
 			</div>
 		<?php } ?>
 	</div>
+	<div>
+        <?php
+        $sql = "SELECT * FROM candidature WHERE id_evenement=".$_GET['id']." AND id_utilisateur=".$_SESSION['id_compte'];
+        $res = $dbh->query($sql);
+        foreach ($res as $ver) {}
+        if (!isset($ver) || !isset($ver['id_candidature']))
+        {}
+        else
+        {?>
+        <form method="POST" class="formconsulter" action="poster.php">
+            <label>Laisser un commentaire :</label>
+            <input type="hidden" name="id_utilisateur" value=<?php echo ("'".$_SESSION['id_compte']."'"); ?>>
+            <input type="hidden" name="id_evenement" value=<?php echo ("'".$_GET['id']."'"); ?>>
+            <input type="radio" name="note" value="1">
+            <input type="radio" name="note" value="2">
+            <input type="radio" name="note" value="3">
+            <input type="radio" name="note" value="4">
+            <input type="radio" name="note" value="5" checked>
+            <textarea name="text" class="textarearelou"></textarea>
+            <button type="submit" class="btncommentaire">Poster</button>
+        </form>
+        <?php } ?>
+    </div>
+    <div>
+        <?php
+        $sql = "SELECT utilisateur.pseudo_utilisateur, commentaire.texte_commentaire, commentaire.eval_commentaire  FROM commentaire LEFT JOIN utilisateur ON commentaire.id_utilisateur=utilisateur.id_utilisateur WHERE commentaire.id_evenement=".$_GET['id'];
+        $res = $dbh->query($sql);
+        foreach ($res as $com)
+        { ?>
+            <div class="formconsulter">
+                <div>
+                    <label>Nom :</label><label class="label2"><?php echo($com['pseudo_utilisateur']) ?></label>
+                </div>
+                <div>
+                    <label>Note :</label><label class="label2"><?php echo($com['eval_commentaire']) ?></label>
+                </div>
+            </div>
+            <div class="descriptionrelou">
+                <textarea DISABLED class="labelrelou"><?php echo($com['texte_commentaire']) ?></textarea>
+            </div>
+        <?php } ?>
+    </div>
 </body>
 <?php $dbh = null; ?>
 </html>

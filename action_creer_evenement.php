@@ -48,7 +48,7 @@
 
 		if (strlen($_POST['cp']) != 5)
 		{
-			header("location: creer.php?error=cp");
+			header("location: inscription.php?error=cp");
 			exit();
 		}
 
@@ -56,7 +56,7 @@
 		{
 			if ($char < '0' || $char > '9')
 			{
-				header("location: creer.php?error=cp");
+				header("location: inscription.php?error=cp");
 				exit();
 			}
 		}
@@ -70,7 +70,7 @@
 	//c'est l'heure de la création du compte
 	$sql = "INSERT INTO evenement(nom_evenement, ville_evenement, cp_evenement, categorie, description_evenement, id_utilisateur)values('".$_POST['nom']."', '".$_POST['ville']."', '".$_POST['cp']."', '".$_POST['categorie']."', '".$_POST['desc']."', '".$_SESSION['id_compte']."')";
 	$dbh->exec($sql);
-	header("location: accueil.php");
+	header("location: consulter.php");
 	exit();
 ?>
 <?php $dbh = null;//deco de la base de donnee ?>

@@ -150,6 +150,7 @@
 	//c'est l'heure de la création du compte
 	$sql = "INSERT INTO utilisateur(nom_utilisateur, prenom_utilisateur, ville_utilisateur, cp_utilisateur, telephone_utilisateur, email_utilisateur, pseudo_utilisateur, mdp_utilisateur, sexe)values('".$_POST['nom']."', '".$_POST['prenom']."', '".$_POST['ville']."', '".$_POST['cp']."', '".$_POST['telephone']."', '".$_POST['mail']."', '".$_POST['pseudo']."', '".$_POST['mdp']."', '".$_POST['sexe']."')";
 	$dbh->exec($sql);
-
+	header("location: accueil.php");
+	exit();
 ?>
 <?php $dbh = null;//deco de la base de donnee ?>

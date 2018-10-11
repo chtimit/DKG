@@ -5,10 +5,18 @@
 	<title>Créer un évenement</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<a href="accueil.php"><img src="src/log12.png"> </a>
-</header>
+	<?php session_start();
+		if (!isset($_SESSION['login']) || $_SESSION['login'] == "")
+		{?>
+			<a href="connexion.php" class="button2"> Connexion	</a>
+			<a href="inscription.php" class="button1"> Inscription</a>
+			<a href="profil.php" class="button3"> Profil </a>
+		<?php } else { ?>
+			<a href="deconexion.php" class="button2"> Déconexion</a>
+			<a href="profil.php" class="button3"> Profil </a>
+	<?php } ?>
 <body>
 	<?php
-	session_start();
 
 	if (!isset($_SESSION['login']) || $_SESSION['login'] == "")
 	{
@@ -33,6 +41,8 @@
 	}
 
 	?>
+</header>
+
 	<div class="formcreer">
 		<div class="titreevenement">Publier votre évènement</div>
 		<form method='POST' action='action_creer_evenement.php'>

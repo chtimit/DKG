@@ -58,6 +58,20 @@ header
     float: right;
 }
 
+.button3
+{
+    background-color: #fff;
+    border: none;
+    color: #00AFF5;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    text-decoration: none;
+    font-size: 25px;
+    float: right;
+}
+
 /* Partie Main-Image */
  
  #main-image
@@ -288,6 +302,131 @@ li
     margin-left: 520px;
     text-align: center;
     width: 100px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow:1px 1px 1px #262E59;
+    cursor:pointer;
+}
+
+/* Page evenement.php */
+
+.descriptionrelou 
+{
+    height: 70px;
+    background-image:url(../src/fondclair.bmp);
+    width: 445px;
+    border: 3px #A0A0A0 solid;
+    margin-top: 20px;
+    margin-left: 450px;
+}
+
+.labelrelou
+{ 
+    width: 445px;
+    height: 46px;
+    background-image:url(../src/fondclair.bmp);
+    border: none;
+    font-size: 18px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.btncandidature
+{
+    margin-left: 598px;
+    margin-top: 15px;
+    text-align: center;
+    height: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow:1px 1px 1px #262E59;
+    cursor:pointer;
+}
+
+.etateve
+{
+    height: 20px;
+    background-image:url(../src/fondclair.bmp);
+}
+
+.titreliste
+{
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 500px;
+    margin-top: 20px;
+}
+
+.liste
+{
+    height: 235px;
+    background-image:url(../src/fondclair.bmp);
+    width: 445px;
+    border: 3px #A0A0A0 solid;
+    margin-top: 20px; 
+    margin-left: 450px;
+}
+
+.btnannuler
+{
+    margin-left: 40px;
+    margin-top: 5px;
+    text-align: center;
+    height: 20px;
+    width: 70px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow:1px 1px 1px #262E59;
+    cursor:pointer;
+    margin-bottom: 4px;
+}
+
+.btnchoix
+{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow:1px 1px 1px #262E59;
+    cursor:pointer;
+    margin-bottom: 2px;
+
+}
+
+.formprofil
+{
+    margin-top: 20px;
+    margin-left: 450px;
+    margin-right: 450px;
+    background-image:url(../src/fondclair.bmp);
+    border: 3px #A0A0A0 solid;
+    padding-bottom: 20px;
+}
+
+.titreprofil
+{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.3); 
+}
+
+.textarearelou
+{
+    margin-left: 5px;
+    margin-top: 10px;
+    border: 3px #A0A0A0 solid;
+}
+.btncommentaire
+{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
+    height: 20px;
     text-decoration: none;
     font-weight: bold;
     box-shadow:1px 1px 1px #262E59;

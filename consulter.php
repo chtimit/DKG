@@ -10,10 +10,11 @@
 		{?>
 			<a href="connexion.php" class="button2"> Connexion	</a>
 			<a href="inscription.php" class="button1"> Inscription</a>
+			<a href="profil.php" class="button3"> Profil </a>
 		<?php } else { ?>
 			<a href="deconexion.php" class="button2"> Déconexion</a>
+			<a href="profil.php" class="button3"> Profil </a>
 	<?php } ?>
-
 	<?php
 
 
