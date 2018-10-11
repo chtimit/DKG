@@ -4,17 +4,17 @@
 
 <header>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<a href="accueil.php"><img src="src/log12.png"> </a> 
 	<title>Ici à Brest</title>
-		<img src="src/log12.png">
-	
-		<?php session_start();
+
+	<?php session_start();
 		if (!isset($_SESSION['login']) || $_SESSION['login'] == "")
 		{?>
 			<a href="connexion.php" class="button2"> Connexion	</a>
 			<a href="inscription.php" class="button1"> Inscription</a>
 		<?php } else { ?>
 			<a href="deconexion.php" class="button2"> Déconexion</a>
-		<?php } ?>
+	<?php } ?>
 
 </header>
 <body>
@@ -25,6 +25,7 @@
 				<a href="creer.php" class="creereve">Créer</a>
 				<a href="consulter.php" class="consultereve">Consulter</a>
 			</div>
+			<h4>Ici à Brest permet de mettre en lien tous les étudiants en leur offrant une expérience<br> d’utilisation optimale et contribue à créer des opportunités de rencontres et de partages.</h4>
 		</div>
 	</section>
 </body>
