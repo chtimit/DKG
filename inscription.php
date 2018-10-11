@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="style/style.css">
 <header>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>inscription</title>
+	<title>Inscription</title>
 	<a href="accueil.php"><img src="src/log12.png"></a>
 
 </header>
@@ -12,42 +12,42 @@
 	<div class="forminscription">
 		<form method='POST' action='creation_compte.php'>
 			<div>
-				<br><label>Nom :</label><input type='text' name='nom' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "nom") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
+				<br><label>Nom :</label><input type='text' name='nom' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "nom") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
 				
 			</div><br>
 			<div>
-			<label>Prenom :</label><input type='text' name='prenom' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "prenom") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
+			<label>Prenom :</label><input type='text' name='prenom' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "prenom") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
 				
 			</div><br>
 			<div>
-			<label>Nom d'utilisateur :</label><input type='text' name='pseudo' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "pseudo") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} if (isset($_GET['error']) && $_GET['error'] == "pseudo2") { echo ("placeholder='!non disponible' style='border-style: solid; border-color: red;'");} ?>>
+			<label>Nom d'utilisateur :</label><input type='text' name='pseudo' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "pseudo") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} if (isset($_GET['error']) && $_GET['error'] == "pseudo2") { echo ("placeholder='!non disponible' style='border-style: solid; border-color: red;'");} ?>>
 				
 			</div><br>
 			<div>
 				<label>Mot de passe :</label>
-				<input type='password' name='mdp' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "mdp") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");}  if (isset($_GET['error']) && $_GET['error'] == "mdp3") { echo ("placeholder='!deux saisie non identique' style='border-style: solid; border-color: red;'");} ?>>
+				<input type='password' name='mdp' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "mdp") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");}  if (isset($_GET['error']) && $_GET['error'] == "mdp3") { echo ("placeholder='!deux saisie non identique' style='border-style: solid; border-color: red;'");} ?>>
 			</div><br>
 			<div>
 				<label>Confirmer mot de <br><label>passe :</label></label>
-				<input type='password' name='mdp2' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "mdp2") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");}  if (isset($_GET['error']) && $_GET['error'] == "mdp3") { echo ("placeholder='!deux saisie non identique' style='border-style: solid; border-color: red;'");} ?>>
+				<input type='password' name='mdp2' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "mdp2") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");}  if (isset($_GET['error']) && $_GET['error'] == "mdp3") { echo ("placeholder='!deux saisie non identique' style='border-style: solid; border-color: red;'");} ?>>
 				
 			</div><br>
 			<div>
 				<label>Email :</label>
-				<input type='text' name='mail' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "mail") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} if (isset($_GET['error']) && $_GET['error'] == "mail2") { echo ("placeholder='!non disponible' style='border-style: solid; border-color: red;'");} ?>>
+				<input type='text' name='mail' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "mail") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} if (isset($_GET['error']) && $_GET['error'] == "mail2") { echo ("placeholder='!non disponible' style='border-style: solid; border-color: red;'");} ?>>
 				
 			</div><br>
 			<div>
 				<label>Telephone :</label>
-				<input type='text' name='telephone' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "tele") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} if (isset($_GET['error']) && $_GET['error'] == "tele2") { echo ("placeholder='!non disponible' style='border-style: solid; border-color: red;'");} ?>>
+				<input type='text' name='telephone' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "tele") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} if (isset($_GET['error']) && $_GET['error'] == "tele2") { echo ("placeholder='!non disponible' style='border-style: solid; border-color: red;'");} ?>>
 			</div><br>
 			<div>
 				<label>Code postal :</label>
-				<input type='text' name='cp' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "cp") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
+				<input type='text' name='cp' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "cp") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
 			</div><br>
 			<div>
 				<label>Ville :</label>
-				<input type='text' name='ville' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "ville") { echo ("placeholder='erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
+				<input type='text' name='ville' class="champsblanc" <?php if (isset($_GET['error']) && $_GET['error'] == "ville") { echo ("placeholder='Erreur de saisie' style='border-style: solid; border-color: red;'");} ?>>
 			</div><br>
 			<div class="sexe">
 				<label>Sexe :</label>

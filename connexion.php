@@ -6,6 +6,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<a href="accueil.php"><img src="src/log12.png"> </a>
 
+	<?php session_start();
+		if (!isset($_SESSION['login']) || $_SESSION['login'] == "")
+		{?>
+			<a href="connexion.php" class="button2"> Connexion	</a>
+			<a href="inscription.php" class="button1"> Inscription</a>
+		<?php } else { ?>
+			<a href="deconexion.php" class="button2"> Déconexion</a>
+	<?php } ?>
+
+
 </header>
 <body>
 	<div class="formconnexion">
