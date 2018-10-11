@@ -130,7 +130,7 @@
 	$sql = "SELECT * FROM `utilisateur`";
 	$result = $dbh->query($sql);
 	foreach ($result as $util) {
-		if ($util['email_utilisateur'] == $_POST['email'])
+		if ($util['email_utilisateur'] == $_POST['mail'])
 		{
 			header("location: inscription.php?error=mail2");
 			exit();
