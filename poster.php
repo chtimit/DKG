@@ -1,9 +1,9 @@
 <?php
 	session_start();
 	$host = "localhost";
-	$dbname = "workshop";
-	$id_db = "root";
-	$mdp_db = "";
+	$dbname = "id7403838_workshop";
+	$id_db = "id7403838_workshop";
+	$mdp_db = "password";
 	try
 	{
 	    // create connexion
