@@ -20,7 +20,7 @@
 			</div>
 			<button type="submit" class="formvalider">Connexion</button>
 		</form>
-	<div class="nonmembre">Pas encore membre ? <a href="inscrption.php" class="lieninscris">Inscrivez vous</a></div>
+	<div class="nonmembre">Pas encore membre ? <a href="inscription.php" class="lieninscris">Inscrivez vous</a></div>
 	</div>
 </body>
 </html>
