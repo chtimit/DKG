@@ -15,6 +15,8 @@
 			<a href="profil.php" class="button3"> Profil </a>
 		<?php } else { ?>
 			<a href="deconexion.php" class="button2"> Déconexion</a>
+			<a href='profil.php?id=<?php echo ($_SESSION['id_compte']."'"); ?> class="button3"> Profil </a>
+
 	<?php } ?>
 
 </header>
