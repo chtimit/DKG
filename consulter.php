@@ -28,7 +28,7 @@
 	function result($dbh)
 	{
 		if (isset($_POST['categorie']) && $_POST['categorie'] != 0)
-			$sql = "SELECT evenement.id_evenement, evenement.nom_evenement, categorie.categorie FROM evenement LEFT JOIN categorie ON categorie.id_categorie=evenement.categorie WHERE categorie='".$_POST['categorie']."' AND nom_evenement LIKE '%".$_POST['nom']."%'";
+			$sql = "SELECT evenement.id_evenement, evenement.nom_evenement, categorie.categorie FROM evenement LEFT JOIN categorie ON categorie.id_categorie=evenement.categorie WHERE evenement.categorie='".$_POST['categorie']."' AND nom_evenement LIKE '%".$_POST['nom']."%'";
 		else
 			$sql = "SELECT evenement.id_evenement, evenement.nom_evenement, categorie.categorie FROM evenement LEFT JOIN categorie ON categorie.id_categorie=evenement.categorie WHERE nom_evenement LIKE '%".$_POST['nom']."%'";
 		return ($dbh->query($sql));
