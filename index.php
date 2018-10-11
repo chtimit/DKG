@@ -4,6 +4,9 @@
 	<title>ICI A BresT</title>
 </head>
 <body>
-	blabla
+	<?php
+		header("location: accueil.php");
+		exit();
+	?>
 </body>
 </html>
