@@ -20,6 +20,11 @@
 	     print "Erreur !: " . $e->getMessage() . "<br/>";
 	}
 
+	if (!isset($_POST['nom']))
+	{
+		$_POST['nom'] = "";
+	}
+	
 	function result($dbh)
 	{
 		if (isset($_POST['categorie']) && $_POST['categorie'] != 0)
